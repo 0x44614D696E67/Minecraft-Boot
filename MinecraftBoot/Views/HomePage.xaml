@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="MinecraftBoot.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MinecraftBoot.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="using:CommunityToolkit.WinUI.Media"
+    xmlns:common="using:Microsoft.UI.Xaml.Controls"
+    xmlns:wuc="using:WinUICommunity"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:labs="using:CommunityToolkit.Labs.WinUI"
+    xmlns:controls1="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <media:AttachedCardShadow x:Key="CommonShadow"
+                                  Color="#9cc4e4"
+                                  CornerRadius="8"
+                                  Offset="0, 1"/>
+    </Page.Resources>
+
+    <ScrollView Margin="40,16,40,16" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="16" Spacing="5" VerticalAlignment="Bottom">
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" wuc:Growl.GrowlParent="True">
+                <wuc:GooeyButton x:Name="gooeyButton"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 Invoked="gooeyButton_Invoked"
+                                 ItemInvoked="gooeyButton_ItemInvoked"
+                                 ItemsSource="{x:Bind strings}">
+                    <wuc:GooeyButton.Content>
+                        <SymbolIcon Symbol="Add" />
+                    </wuc:GooeyButton.Content>
+                    <wuc:GooeyButton.ItemTemplate>
+                        <DataTemplate>
+                            <SymbolIcon Symbol="{Binding}" />
+                        </DataTemplate>
+                    </wuc:GooeyButton.ItemTemplate>
+                </wuc:GooeyButton>
+            </StackPanel>
+            <TeachingTip x:Name="HomeTeachingTip"
+                         PreferredPlacement="RightBottom"
+                         Title="创建房间？"
+                         Subtitle="即将创建一个多人房间"
+                         IsLightDismissEnabled="True"
+                         ActionButtonContent="开始创建"
+                         ActionButtonClick="HomeTeachingTip_ActionButtonClick"
+                         CloseButtonContent="取消"/>
+        </StackPanel>
+    </ScrollView>
+</Page>
