@@ -20,7 +20,6 @@
             <MenuFlyout>
                 <MenuFlyoutItem Text="应用设置" Icon="Setting" Click="SettingsMenuFlyoutItem_Click"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem Text="用户管理" Icon="Other User" Click="UserManagerMenuFlyoutItem_Click"/>
                 <MenuFlyoutItem Text="用户主页" Icon="People" Click="UserMenuFlyoutItem_Click"/>
             </MenuFlyout>
         </Button.Flyout>
